@@ -13,14 +13,14 @@ public class TabPanel  extends JPanel{
     private JButton submitButton;
     
 
-    public TabPanel(List<String> workList, MainFrame parentFrame, Controller controller){
+    public TabPanel(List<String> workList, MainFrame parentFrame, Controller controller, int weekOffset){
 
         setLayout(new BorderLayout(10, 10));
         JPanel submitPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
         submitButton = new JButton("送信");
         submitPanel.add(submitButton);
         add(submitPanel, BorderLayout.SOUTH);
-        List<DayData> weekData = controller.createWeekData(0);
+        List<DayData> weekData = controller.createWeekData(weekOffset);
         WeekPanel weekPanel = new WeekPanel(weekData);
         add(weekPanel,BorderLayout.NORTH);
 
@@ -32,7 +32,7 @@ public class TabPanel  extends JPanel{
                 // チェック状態を取得
                 List<String> selected = workContentPanel.getSelectedWorks();
                 List<DayData> resultData = weekPanel.getAllDayData();
-                controller.handleSubmit(selected, resultData);
+                controller.handleSubmit(selected, resultData, weekOffset);
 
             });
 

@@ -26,12 +26,12 @@ public class MainFrame extends JFrame{
         tabbedPane = new JTabbedPane();
         
         // 各タブパネルを作成
-        TabPanel firstTab = new TabPanel(workList, this, controller);
-        TabPanel secondTab = new TabPanel(workList, this, controller);
+        TabPanel firstTab = new TabPanel(workList, this, controller,0);
+        TabPanel secondTab = new TabPanel(workList, this, controller,-1);
         
         // タブを追加
         tabbedPane.addTab("今週", firstTab);
-        tabbedPane.addTab("タブ2", secondTab);
+        tabbedPane.addTab("先週", secondTab);
         
         getContentPane().add(tabbedPane);
     }

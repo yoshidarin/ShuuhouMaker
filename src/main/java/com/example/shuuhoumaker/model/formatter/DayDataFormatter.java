@@ -28,8 +28,8 @@ public class DayDataFormatter {
     public static String formatTargetDays(List<DayData> resultData){
 
         return String.format("%s〜%s",
-                resultData.get(0).getDate().format(DateTimeFormatter.ofPattern("yyyy年MM月dd日(E)")),
-                resultData.get(resultData.size()-1).getDate().format(DateTimeFormatter.ofPattern("yyyy年MM月dd日(E)"))
+                resultData.get(0).getDate().format(DateTimeFormatter.ofPattern("yyyy年MM月dd日")),
+                resultData.get(resultData.size()-1).getDate().format(DateTimeFormatter.ofPattern("yyyy年MM月dd日"))
         );
 
     }

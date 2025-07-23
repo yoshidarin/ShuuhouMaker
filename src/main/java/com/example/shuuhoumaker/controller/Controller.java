@@ -15,6 +15,7 @@ import src.main.java.com.example.shuuhoumaker.model.formatter.*;
 public class Controller {
         private MainFrame mainFrame;
         private ResultFrame resultFrame;
+        private int weekOffsetNextWeek;
 
     public void startApp() {
         // 必要なデータ取得
@@ -26,12 +27,12 @@ public class Controller {
     }
 
     // ボタン押下時の処理
-    public void handleSubmit(List<String> selectedItems, List<DayData> resultData) {
+    public void handleSubmit(List<String> selectedItems, List<DayData> resultData, int weekOffset) {
         // ここでModel更新や別画面へ遷移を行う
         // System.out.println("選択された項目: " + selectedItems);
-
+        weekOffsetNextWeek = weekOffset + 1;
         String thisWeekSummary = DayDataFormatter.formatSummary(resultData);
-        String nextWeekSummery = DayDataFormatter.formatSummary(createWeekData(1));
+        String nextWeekSummery = DayDataFormatter.formatSummary(createWeekData(weekOffsetNextWeek));
         String titleDate = DayDataFormatter.formatTitleDay(resultData.get(0));
         String targetDays = DayDataFormatter.formatTargetDays(resultData);
         String result = TemplateProvider.formatTemplate(selectedItems, thisWeekSummary,nextWeekSummery, titleDate, targetDays);
@@ -40,7 +41,7 @@ public class Controller {
 
     }
 
-    // weekPanelようのデータ作り
+    // weekPanel用のデータ作り
     public List<DayData> createWeekData(int weekOffset) {
         List<LocalDate> dates = DateProvider.getWeekDates(weekOffset);
         List<DayData> dataList = new ArrayList<>();
