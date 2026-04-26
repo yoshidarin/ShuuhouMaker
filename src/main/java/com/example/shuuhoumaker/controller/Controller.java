@@ -1,8 +1,5 @@
 package src.main.java.com.example.shuuhoumaker.controller;
 
-import java.time.DayOfWeek;
-import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
 
 import src.main.java.com.example.shuuhoumaker.factory.WeekDataFactory;

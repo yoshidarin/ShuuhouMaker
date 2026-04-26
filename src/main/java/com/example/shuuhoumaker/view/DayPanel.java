@@ -56,14 +56,6 @@ public class DayPanel extends JPanel {
         return new Integer[]{0, 15, 30, 45};
     }
 
-    public Integer getSelectedHour() {
-        return (Integer) hourCombo.getSelectedItem();
-    }
-
-    public Integer getSelectedMinute() {
-        return  (Integer) minuteCombo.getSelectedItem();
-    }
-
     public DayData getDayData() {
         dayData.setHour((Integer) hourCombo.getSelectedItem());
         dayData.setMinute((Integer) minuteCombo.getSelectedItem());

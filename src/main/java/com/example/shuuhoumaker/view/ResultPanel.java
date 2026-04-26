@@ -1,7 +1,5 @@
 package src.main.java.com.example.shuuhoumaker.view;
 
-import src.main.java.com.example.shuuhoumaker.controller.Controller;
-
 import javax.swing.*;
 import java.awt.*;
 

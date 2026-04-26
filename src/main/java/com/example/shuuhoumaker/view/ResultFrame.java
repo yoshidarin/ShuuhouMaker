@@ -1,6 +1,5 @@
 package src.main.java.com.example.shuuhoumaker.view;
 
-import src.main.java.com.example.shuuhoumaker.controller.Controller;
 import javax.swing.*;
 
 public class ResultFrame extends JFrame{
