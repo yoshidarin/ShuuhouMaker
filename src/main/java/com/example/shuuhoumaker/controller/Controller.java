@@ -6,11 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 import src.main.java.com.example.shuuhoumaker.view.*;
 import src.main.java.com.example.shuuhoumaker.model.data.*;
-import src.main.java.com.example.shuuhoumaker.model.provider.*;
-import src.main.java.com.example.shuuhoumaker.model.formatter.*;
-
-
-
+import src.main.java.com.example.shuuhoumaker.provider.*;
+import src.main.java.com.example.shuuhoumaker.formatter.*;
 
 public class Controller {
         private MainFrame mainFrame;
@@ -30,6 +27,7 @@ public class Controller {
     public void handleSubmit(List<String> selectedItems, List<DayData> resultData, int weekOffset) {
         // ここでModel更新や別画面へ遷移を行う
         // System.out.println("選択された項目: " + selectedItems);
+        // todo:ReportFormatter.formatに分離　
         weekOffsetNextWeek = weekOffset + 1;
         String thisWeekSummary = DayDataFormatter.formatSummary(resultData);
         String nextWeekSummery = DayDataFormatter.formatSummary(createWeekData(weekOffsetNextWeek));
@@ -41,7 +39,7 @@ public class Controller {
 
     }
 
-    // weekPanel用のデータ作り
+    // todo:weekPanel用のデータ作り →WeekDataFactory.createに分離
     public List<DayData> createWeekData(int weekOffset) {
         List<LocalDate> dates = DateProvider.getWeekDates(weekOffset);
         List<DayData> dataList = new ArrayList<>();
@@ -54,7 +52,7 @@ public class Controller {
         return dataList;
     }
 
-    // 土日判定
+    // todo: 土日判定 →WeekDataFactory.isWeekendOrHolidayに分離
     public boolean isWeekendOrHoliday(LocalDate date){
         if (date.getDayOfWeek() == DayOfWeek.SATURDAY || date.getDayOfWeek() == DayOfWeek.SUNDAY) {
             return true;
@@ -62,6 +60,5 @@ public class Controller {
             return false;
         }
     }
-    
 
 }

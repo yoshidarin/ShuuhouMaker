@@ -1,15 +1,10 @@
 package src.main.java.com.example.shuuhoumaker.view;
 
-
 import src.main.java.com.example.shuuhoumaker.controller.Controller;
-import src.main.java.com.example.shuuhoumaker.model.data.WorkDataModel;
-
 import javax.swing.*;
-
 
 public class ResultFrame extends JFrame{
     private JTabbedPane tabbedPane;
-    private WorkDataModel dataModel;
     String result;
     public ResultFrame(Controller controller, String result) {
         setTitle("今週の週報出力画面");
@@ -46,5 +41,4 @@ public class ResultFrame extends JFrame{
         setVisible(true);
     }
 
-   
 }

@@ -8,12 +8,11 @@ import java.awt.*;
 import java.util.List;
 
 public class TabPanel  extends JPanel{
-    private MainFrame parentFrame;
-    private JTextField inputField;
+
     private JButton submitButton;
     
 
-    public TabPanel(List<String> workList, MainFrame parentFrame, Controller controller, int weekOffset){
+    public TabPanel(List<String> workList, Controller controller, int weekOffset){
 
         setLayout(new BorderLayout(10, 10));
         JPanel submitPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));

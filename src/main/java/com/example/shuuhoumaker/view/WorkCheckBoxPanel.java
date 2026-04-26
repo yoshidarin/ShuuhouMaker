@@ -26,5 +26,4 @@ public class WorkCheckBoxPanel extends JPanel {
             .collect(Collectors.toList());
     }
 
-    
 }

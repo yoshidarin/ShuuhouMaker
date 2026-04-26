@@ -1,4 +1,4 @@
-package src.main.java.com.example.shuuhoumaker.model.provider;
+package src.main.java.com.example.shuuhoumaker.provider;
 
 import java.time.DayOfWeek;
 import java.time.LocalDate;

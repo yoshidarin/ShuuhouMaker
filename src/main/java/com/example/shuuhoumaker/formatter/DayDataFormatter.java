@@ -1,4 +1,4 @@
-package src.main.java.com.example.shuuhoumaker.model.formatter;
+package src.main.java.com.example.shuuhoumaker.formatter;
 
 import src.main.java.com.example.shuuhoumaker.model.data.DayData;
 import src.main.java.com.example.shuuhoumaker.model.data.Status;

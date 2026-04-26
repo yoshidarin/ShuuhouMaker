@@ -2,15 +2,12 @@ package src.main.java.com.example.shuuhoumaker.view;
 
 
 import src.main.java.com.example.shuuhoumaker.controller.Controller;
-import src.main.java.com.example.shuuhoumaker.model.data.WorkDataModel;
-
 import javax.swing.*;
 import java.util.List;
 
 
 public class MainFrame extends JFrame{
     private JTabbedPane tabbedPane;
-    private WorkDataModel dataModel;
     List<String> workList;
     public MainFrame(Controller controller, List<String> workList) {
         setTitle("週報メーカー");
@@ -26,8 +23,8 @@ public class MainFrame extends JFrame{
         tabbedPane = new JTabbedPane();
         
         // 各タブパネルを作成
-        TabPanel firstTab = new TabPanel(workList, this, controller,0);
-        TabPanel secondTab = new TabPanel(workList, this, controller,-1);
+        TabPanel firstTab = new TabPanel(workList, controller,0);
+        TabPanel secondTab = new TabPanel(workList, controller,-1);
         
         // タブを追加
         tabbedPane.addTab("今週", firstTab);
@@ -53,5 +50,4 @@ public class MainFrame extends JFrame{
         setVisible(true);
     }
 
-   
 }
