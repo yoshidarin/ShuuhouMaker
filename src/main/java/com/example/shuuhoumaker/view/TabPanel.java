@@ -10,16 +10,14 @@ import java.util.List;
 public class TabPanel  extends JPanel{
 
     private JButton submitButton;
-    
 
-    public TabPanel(List<String> workList, Controller controller, int weekOffset){
+    public TabPanel(List<String> workList, Controller controller, List<DayData> weekData, int weekOffset){
 
         setLayout(new BorderLayout(10, 10));
         JPanel submitPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
         submitButton = new JButton("送信");
         submitPanel.add(submitButton);
         add(submitPanel, BorderLayout.SOUTH);
-        List<DayData> weekData = controller.createWeekData(weekOffset);
         WeekPanel weekPanel = new WeekPanel(weekData);
         add(weekPanel,BorderLayout.NORTH);
 

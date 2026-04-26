@@ -5,39 +5,21 @@ import javax.swing.*;
 
 public class ResultFrame extends JFrame{
     String result;
-    public ResultFrame(Controller controller, String result) {
+    public ResultFrame(String result) {
         setTitle("今週の週報出力画面");
         setSize(800, 600);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); //ResultFrameのみとじる
         setLocationRelativeTo(null);
         this.result = result;
         // タブ付きペインの設定
-        initComponents(result, controller);
+        initComponents(result);
     }
     
-    private void initComponents(String result, Controller controller) {
+    private void initComponents(String result) {
 
         // 結果パネルを作る
-        ResultPanel resultPanel = new ResultPanel(result, this, controller);
+        ResultPanel resultPanel = new ResultPanel(result);
         add(resultPanel);
-    }
-
-    /*
-    // 画面遷移を処理するメソッド
-    public void navigateToDetailWindow(String data) {
-        // 現在のフレームを非表示に
-        setVisible(false);
-        
-        // 新しい画面を表示
-        DetailWindow detailWindow = new DetailWindow(this, dataModel);
-        detailWindow.setData(data);
-        detailWindow.setVisible(true);
-    }
-    */
-    
-    // メインフレームに戻るメソッド
-    public void returnToMainFrame() {
-        setVisible(true);
     }
 
 }

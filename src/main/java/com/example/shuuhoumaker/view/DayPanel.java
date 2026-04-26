@@ -36,9 +36,8 @@ public class DayPanel extends JPanel {
         hourCombo.setSelectedItem(data.getHour());
         minuteCombo.setSelectedItem(data.getMinute());
         statusCombo.setSelectedItem(data.getStatus());
-
-        add(dateLabel);
         setLayout(new FlowLayout());
+        add(dateLabel);
         add(hourCombo);
         add(new JLabel(":"));
         add(minuteCombo);
