@@ -21,8 +21,7 @@ public class DayDataFormatter {
             }
             lines.add(line);
         }
-        String weekSummary = String.join("\n", lines);
-        return weekSummary;
+        return String.join("\n", lines);
     }
 
     public static String formatTargetDays(List<DayData> resultData){

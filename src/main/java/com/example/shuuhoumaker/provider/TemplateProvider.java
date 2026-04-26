@@ -24,20 +24,6 @@ public class TemplateProvider {
         }
     }
 
-    public static String generate(List<DayData> dataList) {
-        StringBuilder builder = new StringBuilder();
-        for (DayData data : dataList) {
-            builder.append(String.format(
-                    "%s %02d:%02d %s\n",
-                    data.getDate().format(DateTimeFormatter.ofPattern("M/d(E)")),
-                    data.getHour(),
-                    data.getMinute(),
-                    data.getStatus().getLabel()
-            ));
-        }
-        return builder.toString();
-    }
-
     // 選択された作業リストを渡すと、埋め込んだ完成文を返す
     public static String formatTemplate(List<String> selectedItems,String weekSummary,String nextWeekSummary, String titleDate, String targetDays) {
         String joinedWorks = String.join("\n", selectedItems);
